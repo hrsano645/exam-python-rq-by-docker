@@ -1,0 +1,26 @@
+version: '3'
+environment:
+  RQ_REDIS_URL: redis://redis
+services:
+  redis:
+    image: redis
+  worker:
+    build: .
+    depends_on:
+      - redis
+    # ワーカー1プロセス起動
+    # command: rq worker
+    # ワーカー複数プロセス起動
+    command: rq worker -w 2
+    volumes:
+      - .:/app
+    working_dir: /app
+  app:
+    build: .
+    depends_on:
+      - redis
+      - worker
+    command: python app.py
+    volumes:
+      - .:/app
+    working_dir: /app
