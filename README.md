@@ -2,9 +2,9 @@
 
 ## How to run
 
-* docker-compose up
-
-* docker-compose up --scale worker=4
+* (dev) rye sync
+* single worker: docker-compose up
+* multiple worker: docker-compose up --scale worker=4
 
 # Reference
 

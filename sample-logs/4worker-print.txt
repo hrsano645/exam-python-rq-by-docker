@@ -1,0 +1,66 @@
+PS C:\Users\hiroshi\Documents\workspace\personal\exam-python-rq-by-docker> docker compose up --scale worker=4
+[+] Running 6/0
+ ✔ Container exam-python-rq-by-docker-redis-1   Created                                                                                                                                 0.0s 
+ ✔ Container exam-python-rq-by-docker-worker-1  Created                                                                                                                                 0.0s 
+ ✔ Container exam-python-rq-by-docker-worker-4  Created                                                                                                                                 0.0s 
+ ✔ Container exam-python-rq-by-docker-worker-2  Created                                                                                                                                 0.0s 
+ ✔ Container exam-python-rq-by-docker-worker-3  Created                                                                                                                                 0.0s 
+ ✔ Container exam-python-rq-by-docker-app-1     Created                                                                                                                                 0.0s 
+Attaching to exam-python-rq-by-docker-app-1, exam-python-rq-by-docker-redis-1, exam-python-rq-by-docker-worker-1, exam-python-rq-by-docker-worker-2, exam-python-rq-by-docker-worker-3, exam-python-rq-by-docker-worker-4
+exam-python-rq-by-docker-redis-1   | 1:C 15 Dec 2023 01:09:19.733 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+exam-python-rq-by-docker-redis-1   | 1:C 15 Dec 2023 01:09:19.733 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+exam-python-rq-by-docker-redis-1   | 1:C 15 Dec 2023 01:09:19.733 * Redis version=7.2.1, bits=64, commit=00000000, modified=0, pid=1, just started
+exam-python-rq-by-docker-redis-1   | 1:C 15 Dec 2023 01:09:19.733 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.733 * monotonic clock: POSIX clock_gettime
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.733 * Running mode=standalone, port=6379.
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * Server initialized
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * Loading RDB produced by version 7.2.1
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * RDB age 5 seconds
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * RDB memory usage when created 1.51 Mb
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * Done loading RDB, keys loaded: 4, keys expired: 0.
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * DB loaded from disk: 0.000 seconds
+exam-python-rq-by-docker-redis-1   | 1:M 15 Dec 2023 01:09:19.734 * Ready to accept connections tcp
+exam-python-rq-by-docker-worker-4  | 01:09:20 Worker rq:worker:af1ebbcefcb742f6a42fde5fe610546f started with PID 1, version 1.15.1
+exam-python-rq-by-docker-worker-4  | 01:09:20 Subscribing to channel rq:pubsub:af1ebbcefcb742f6a42fde5fe610546f
+exam-python-rq-by-docker-worker-4  | 01:09:20 *** Listening on default...
+exam-python-rq-by-docker-worker-2  | 01:09:20 Worker rq:worker:51a01a96b1164cf1b05bbfd3d08597df started with PID 1, version 1.15.1
+exam-python-rq-by-docker-worker-2  | 01:09:20 Subscribing to channel rq:pubsub:51a01a96b1164cf1b05bbfd3d08597df
+exam-python-rq-by-docker-worker-2  | 01:09:20 *** Listening on default...
+exam-python-rq-by-docker-worker-3  | 01:09:20 Worker rq:worker:d6a122a9de594a72b278a27e20522375 started with PID 1, version 1.15.1
+exam-python-rq-by-docker-worker-3  | 01:09:20 Subscribing to channel rq:pubsub:d6a122a9de594a72b278a27e20522375
+exam-python-rq-by-docker-worker-3  | 01:09:20 *** Listening on default...
+exam-python-rq-by-docker-worker-1  | 01:09:20 Worker rq:worker:797d72990ff0432cb0f9fb7e2688d219 started with PID 1, version 1.15.1
+exam-python-rq-by-docker-worker-1  | 01:09:20 Subscribing to channel rq:pubsub:797d72990ff0432cb0f9fb7e2688d219
+exam-python-rq-by-docker-worker-1  | 01:09:20 *** Listening on default...
+exam-python-rq-by-docker-worker-2  | 01:09:21 default: tasks.add(1, 1) (54d150b2-6037-4c77-aee9-5a2a254f982d)
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: tasks.add(2, 1) (9927b349-9a0f-4b96-99bf-891fd530e470)
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: tasks.add(3, 1) (f1f2ce3f-12d0-4678-ab9b-5b3de7cf22d2)
+exam-python-rq-by-docker-worker-4  | 01:09:21 default: tasks.add(0, 1) (970a5464-500a-44dc-995f-ef9c678541b1)
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: Job OK (f1f2ce3f-12d0-4678-ab9b-5b3de7cf22d2)
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: Job OK (9927b349-9a0f-4b96-99bf-891fd530e470)
+exam-python-rq-by-docker-worker-1  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-3  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-2  | 01:09:21 default: Job OK (54d150b2-6037-4c77-aee9-5a2a254f982d)
+exam-python-rq-by-docker-worker-2  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: tasks.add(4, 1) (e202b5de-bfba-43de-b90c-2bb4736035e4)
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: tasks.add(5, 1) (e83244a9-1057-4be7-8201-d1a7697a9c24)
+exam-python-rq-by-docker-worker-4  | 01:09:21 default: Job OK (970a5464-500a-44dc-995f-ef9c678541b1)
+exam-python-rq-by-docker-worker-4  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-2  | 01:09:21 default: tasks.add(6, 1) (c4c8573b-21fc-4e84-a558-c8da040b3d04)
+exam-python-rq-by-docker-worker-4  | 01:09:21 default: tasks.add(7, 1) (f03f16f9-f8d5-45a1-8be3-c1cb01fdccc2)
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: Job OK (e83244a9-1057-4be7-8201-d1a7697a9c24)
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: Job OK (e202b5de-bfba-43de-b90c-2bb4736035e4)
+exam-python-rq-by-docker-worker-1  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-3  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-2  | 01:09:21 default: Job OK (c4c8573b-21fc-4e84-a558-c8da040b3d04)
+exam-python-rq-by-docker-worker-2  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: tasks.add(9, 1) (1b722dde-57e9-40cb-89d0-66b33795b41c)
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: tasks.add(8, 1) (ea370d83-8a41-4f06-9ce4-a1c7d7fef2a0)
+exam-python-rq-by-docker-worker-4  | 01:09:21 default: Job OK (f03f16f9-f8d5-45a1-8be3-c1cb01fdccc2)
+exam-python-rq-by-docker-worker-4  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-3  | 01:09:21 default: Job OK (ea370d83-8a41-4f06-9ce4-a1c7d7fef2a0)
+exam-python-rq-by-docker-worker-3  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-worker-1  | 01:09:21 default: Job OK (1b722dde-57e9-40cb-89d0-66b33795b41c)
+exam-python-rq-by-docker-worker-1  | 01:09:21 Result is kept for 500 seconds
+exam-python-rq-by-docker-app-1     | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+exam-python-rq-by-docker-app-1 exited with code 0
