@@ -4,7 +4,7 @@ from rq import Queue
 from tasks import create_files
 
 
-NUM_FILES = 50
+NUM_FILES = 100
 FILE_SIZE = 1048576
 NUM_TASKS = 3
 

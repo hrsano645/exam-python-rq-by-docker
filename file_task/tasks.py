@@ -15,8 +15,8 @@ def create_files(num_files, file_size, directory="test_files"):
     Path(directory).mkdir(parents=True, exist_ok=True)
 
     for i in range(num_files):
-        filename = f"{directory}/file_{i}.txt"
-        with open(filename, "w") as f:
+        savefile = Path(f"{directory}/file_{i}.txt")
+        with savefile.open("w") as f:
             f.write(create_random_string(file_size))
 
 
