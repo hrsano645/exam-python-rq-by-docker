@@ -1,0 +1,32 @@
+(.venv) PS C:\Users\hiroshi\Documents\workspace\personal\exam-python-rq-by-docker\file_task> docker compose up                 
+[+] Running 3/0
+ ✔ Container file_task-redis-1   Created                                                                                                                                   0.0s 
+ ✔ Container file_task-worker-1  Created                                                                                                                                   0.0s 
+ ✔ Container file_task-app-1     Created                                                                                                                                   0.0s 
+Attaching to file_task-app-1, file_task-redis-1, file_task-worker-1
+file_task-redis-1   | 1:C 24 Jan 2024 03:20:34.695 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+file_task-redis-1   | 1:C 24 Jan 2024 03:20:34.695 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+file_task-redis-1   | 1:C 24 Jan 2024 03:20:34.695 * Redis version=7.2.1, bits=64, commit=00000000, modified=0, pid=1, just started
+file_task-redis-1   | 1:C 24 Jan 2024 03:20:34.695 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.695 * monotonic clock: POSIX clock_gettime
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.695 * Running mode=standalone, port=6379.
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * Server initialized
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * Loading RDB produced by version 7.2.1
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * RDB age 4 seconds
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * RDB memory usage when created 1.62 Mb
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * Done loading RDB, keys loaded: 16, keys expired: 0.
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * DB loaded from disk: 0.000 seconds
+file_task-redis-1   | 1:M 24 Jan 2024 03:20:34.696 * Ready to accept connections tcp
+file_task-worker-1  | 03:20:35 Worker rq:worker:81027d039a944dc3b8a230519243f68e started with PID 1, version 1.15.1
+file_task-worker-1  | 03:20:35 Subscribing to channel rq:pubsub:81027d039a944dc3b8a230519243f68e
+file_task-worker-1  | 03:20:35 *** Listening on default...
+file_task-worker-1  | 03:20:35 default: tasks.create_files(50, 1048576, 'test_files_0') (f18592d2-16ba-4c82-98ef-11da85c44493)
+file_task-app-1 exited with code 0
+file_task-worker-1  | 03:20:52 default: Job OK (f18592d2-16ba-4c82-98ef-11da85c44493)
+file_task-worker-1  | 03:20:52 Result is kept for 500 seconds
+file_task-worker-1  | 03:20:52 default: tasks.create_files(50, 1048576, 'test_files_1') (9f4a596f-73af-4973-9007-af03da8f5057)
+file_task-worker-1  | 03:21:09 default: Job OK (9f4a596f-73af-4973-9007-af03da8f5057)
+file_task-worker-1  | 03:21:09 Result is kept for 500 seconds
+file_task-worker-1  | 03:21:09 default: tasks.create_files(50, 1048576, 'test_files_2') (bf5c15ad-3222-45be-ab8a-3f214a57700d)
+file_task-worker-1  | 03:21:27 default: Job OK (bf5c15ad-3222-45be-ab8a-3f214a57700d)
+file_task-worker-1  | 03:21:27 Result is kept for 500 seconds

@@ -1,0 +1,44 @@
+(.venv) PS C:\Users\hiroshi\Documents\workspace\personal\exam-python-rq-by-docker\file_task> docker compose up --scale worker=3
+[+] Running 5/0
+ ✔ Container file_task-redis-1   Created                                                                                                                                   0.0s 
+ ✔ Container file_task-worker-1  Created                                                                                                                                   0.0s 
+ ✔ Container file_task-worker-3  Created                                                                                                                                   0.0s 
+ ✔ Container file_task-worker-2  Created                                                                                                                                   0.0s 
+ ✔ Container file_task-app-1     Created                                                                                                                                   0.0s 
+Attaching to file_task-app-1, file_task-redis-1, file_task-worker-1, file_task-worker-2, file_task-worker-3
+file_task-redis-1   | 1:C 24 Jan 2024 03:19:25.937 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+file_task-redis-1   | 1:C 24 Jan 2024 03:19:25.937 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+file_task-redis-1   | 1:C 24 Jan 2024 03:19:25.937 * Redis version=7.2.1, bits=64, commit=00000000, modified=0, pid=1, just started
+file_task-redis-1   | 1:C 24 Jan 2024 03:19:25.937 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.937 * monotonic clock: POSIX clock_gettime
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * Running mode=standalone, port=6379.
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * Server initialized
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * Loading RDB produced by version 7.2.1
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * RDB age 8 seconds
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * RDB memory usage when created 1.57 Mb
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * Done loading RDB, keys loaded: 25, keys expired: 0.
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * DB loaded from disk: 0.000 seconds
+file_task-redis-1   | 1:M 24 Jan 2024 03:19:25.938 * Ready to accept connections tcp
+file_task-worker-3  | 03:19:26 Worker rq:worker:a3fae5de17c34f658f597ce4d5543dbc started with PID 1, version 1.15.1
+file_task-worker-3  | 03:19:26 Subscribing to channel rq:pubsub:a3fae5de17c34f658f597ce4d5543dbc
+file_task-worker-3  | 03:19:26 *** Listening on default...
+file_task-worker-3  | 03:19:26 Cleaning registries for queue: default
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-3  | StartedJobRegistry cleanup: Moving job to FailedJobRegistry (due to AbandonedJobError)
+file_task-worker-2  | 03:19:26 Worker rq:worker:3f33ea404d2040e99961f0a2d5d46b1f started with PID 1, version 1.15.1
+file_task-worker-2  | 03:19:26 Subscribing to channel rq:pubsub:3f33ea404d2040e99961f0a2d5d46b1f
+file_task-worker-2  | 03:19:26 *** Listening on default...
+file_task-worker-1  | 03:19:26 Worker rq:worker:32c4d2c46a944ba3b05dcb295cc522c2 started with PID 1, version 1.15.1
+file_task-worker-1  | 03:19:26 Subscribing to channel rq:pubsub:32c4d2c46a944ba3b05dcb295cc522c2
+file_task-worker-1  | 03:19:26 *** Listening on default...
+file_task-worker-3  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_0') (a2767c5e-2caa-47ed-b8f2-204881f671ac)
+file_task-worker-2  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_1') (288a07b9-80eb-4736-9e1c-56887781babe)
+file_task-worker-1  | 03:19:27 default: tasks.create_files(50, 1048576, 'test_files_2') (49f43d8d-b0c2-4edb-a4b3-711852102a9f)
+file_task-app-1 exited with code 0
+file_task-worker-2  | 03:19:44 default: Job OK (288a07b9-80eb-4736-9e1c-56887781babe)
+file_task-worker-2  | 03:19:44 Result is kept for 500 seconds
+file_task-worker-1  | 03:19:44 default: Job OK (49f43d8d-b0c2-4edb-a4b3-711852102a9f)
+file_task-worker-1  | 03:19:44 Result is kept for 500 seconds
+file_task-worker-3  | 03:19:44 default: Job OK (a2767c5e-2caa-47ed-b8f2-204881f671ac)
+file_task-worker-3  | 03:19:44 Result is kept for 500 seconds
