@@ -1,0 +1,25 @@
+version: '3'
+services:
+  redis:
+    image: redis
+  worker:
+    build: .
+    depends_on:
+      - redis
+    environment:
+      RQ_REDIS_URL: redis://redis
+    command: rq worker
+    volumes:
+      - .:/app
+    working_dir: /app
+  app:
+    build: .
+    depends_on:
+      - redis
+      - worker
+    environment:
+      RQ_REDIS_URL: redis://redis
+    command: python app.py
+    volumes:
+      - .:/app
+    working_dir: /app

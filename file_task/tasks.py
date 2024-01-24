@@ -3,9 +3,6 @@ import random
 import string
 import sys
 
-NUM_FILES = 100
-FILE_SIZE = 1048576
-
 
 def create_random_string(length):
     """指定された長さのランダムな文字列を生成する関数"""
@@ -21,12 +18,6 @@ def create_files(num_files, file_size, directory="test_files"):
         filename = f"{directory}/file_{i}.txt"
         with open(filename, "w") as f:
             f.write(create_random_string(file_size))
-
-
-def run_task():
-    """タスクを実行する関数"""
-    create_files(NUM_FILES, FILE_SIZE)
-    return "Done!"
 
 
 # このファイルが直接実行された場合（テスト用）
